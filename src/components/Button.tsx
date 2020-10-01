@@ -1,34 +1,30 @@
 import React from 'react';
 import Link from 'next/link';
 import styled from '@emotion/styled';
-import { Button, ButtonGroupProps } from '@chakra-ui/core';
+import { Button, ButtonProps } from '@chakra-ui/core';
 
-const StyledButton = styled(Button)<{ withIcon: boolean | undefined } | any>`
+const StyledButton = styled(Button) <any>`
     border-radius: 4px;
     font-weight: 500;
     min-height: ${(props) => props.theme.custom.buttonHeight};
     height: ${(props) => props.theme.custom.buttonHeight};
-    justify-content: ${(props) => (props.withIcon ? 'space-between' : 'center')};
+    justify-content: center;
     align-content: center;
 `;
 
-interface ISubmitButton extends ButtonGroupProps {
+interface ISubmitButton extends ButtonProps {
     buttonName: string;
-    analyticName?: string;
     isLoading?: boolean;
     useSubmit?: boolean | 'submit' | 'button' | 'reset' | undefined;
-    withIcon?: boolean | undefined;
 }
 
 export const SubmitButton: React.FC<ISubmitButton> = (props) => {
-    const { withIcon, isLoading, buttonName, ...rest } = props;
+    const { isLoading, buttonName, ...rest } = props;
     return (
         <StyledButton
-            withIcon={withIcon}
             colorScheme="green"
             type="submit"
             isLoading={isLoading}
-            rightIcon={(withIcon && 'arrow-forward') || 'arrow-forward'}
             width="100%"
             {...rest}
         >
@@ -43,15 +39,13 @@ interface ILinkButton extends ISubmitButton {
 }
 
 export const LinkButton: React.FC<ILinkButton> = (props) => {
-    const { withIcon, href, isLoading, buttonName, ...rest } = props;
+    const { href, isLoading, buttonName, ...rest } = props;
 
     return (
         <Link href={href} as={href}>
             <StyledButton
-                withIcon={withIcon}
                 colorScheme="green"
                 isLoading={isLoading}
-                rightIcon={(withIcon && 'arrow-forward') || 'arrow-forward'}
                 width="100%"
                 {...rest}
             >
@@ -62,7 +56,7 @@ export const LinkButton: React.FC<ILinkButton> = (props) => {
 };
 
 export const ActionButton: React.FC<ILinkButton> = (props) => {
-    const { withIcon, href, isLoading, buttonName, ...rest } = props;
+    const { href, isLoading, buttonName, ...rest } = props;
 
     return (
         <Link href={href} as={href}>
@@ -70,7 +64,6 @@ export const ActionButton: React.FC<ILinkButton> = (props) => {
                 colorScheme="green"
                 type="submit"
                 isLoading={isLoading}
-                rightIcon="arro"
                 width="100%"
                 {...rest}
             >
@@ -80,7 +73,7 @@ export const ActionButton: React.FC<ILinkButton> = (props) => {
     );
 };
 
-interface IOptionButtonProps extends ButtonGroupProps {
+interface IOptionButtonProps extends ButtonProps {
     href: string;
     children: React.ReactNode;
     analyticName?: string;
@@ -97,7 +90,7 @@ export const OptionButton: React.FC<IOptionButtonProps> = (props) => {
             <Button
                 variant="outline"
                 justifyContent="flex-start"
-                variantColor="gray"
+                colorScheme="gray"
                 isLoading={isLoading}
                 width="max-content"
                 {...rest}
