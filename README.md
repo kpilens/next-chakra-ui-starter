@@ -3,6 +3,9 @@
 NextJS Bootstrap Kit for KPILENS
 [Visit the Staging Server](https://beta.monaco.kpilens.com)
 
+## Warning
+This branch attempts to migrate to `chakra-next` which has some breaking changes compared to `@chakra-ui version =< 0.8.0`
+
 
 ## Ships with
 
