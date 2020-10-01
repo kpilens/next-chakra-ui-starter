@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { Avatar, Text, Icon, Flex, Box, Heading } from '@chakra-ui/core';
-import { StatusText } from '@components/Elements';
 
 interface IUserList {
     customerName: string;
@@ -31,7 +30,7 @@ export const UserList = (props: IUserList): JSX.Element => {
                         <Heading as="h4" size="sm">
                             {customerName}
                         </Heading>
-                        <StatusText fsize=".75rem">{PhoneNumber}</StatusText>
+                        <Text fontSize=".75rem">{PhoneNumber}</Text>
                     </Box>
                 </Box>
 

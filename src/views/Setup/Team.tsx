@@ -36,8 +36,7 @@ export default function View(): JSX.Element {
         <MainWrapper width="100%" alignItems="flex-start" height="100%">
             {/* == image wrapper section === */}
             <MainBox
-                bg={theme.custom.main}
-                backgroundImage=" url(/layout_pattern.png)"
+                bg={theme.custom.altBackground}
                 position="fixed"
                 minHeight="100vh"
                 height="100%"
@@ -88,7 +87,7 @@ export default function View(): JSX.Element {
                     <Text fontSize="md">Members</Text>
                     <Divider mb="5" />
                     <UserCard info="rubik@kpilens.com" />
-                    <UserCard info="yalberta@kpilens.com" />
+                    <UserCard info="monaco@kpilens.com" />
                 </MainBox>
 
                 {/* === form input subsection  === */}

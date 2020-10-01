@@ -25,7 +25,7 @@ export const SubmitButton: React.FC<ISubmitButton> = (props) => {
     return (
         <StyledButton
             withIcon={withIcon}
-            variantColor="green"
+            colorScheme="green"
             type="submit"
             isLoading={isLoading}
             rightIcon={(withIcon && 'arrow-forward') || 'arrow-forward'}
@@ -45,12 +45,11 @@ interface ILinkButton extends ISubmitButton {
 export const LinkButton: React.FC<ILinkButton> = (props) => {
     const { withIcon, href, isLoading, buttonName, ...rest } = props;
 
-
     return (
         <Link href={href} as={href}>
             <StyledButton
                 withIcon={withIcon}
-                variantColor="green"
+                colorScheme="green"
                 isLoading={isLoading}
                 rightIcon={(withIcon && 'arrow-forward') || 'arrow-forward'}
                 width="100%"
@@ -68,10 +67,10 @@ export const ActionButton: React.FC<ILinkButton> = (props) => {
     return (
         <Link href={href} as={href}>
             <StyledButton
-                variantColor="green"
+                colorScheme="green"
                 type="submit"
                 isLoading={isLoading}
-                rightIcon={(withIcon && 'arrow-forward') || 'arrow-forward'}
+                rightIcon="arro"
                 width="100%"
                 {...rest}
             >
@@ -80,7 +79,6 @@ export const ActionButton: React.FC<ILinkButton> = (props) => {
         </Link>
     );
 };
-
 
 interface IOptionButtonProps extends ButtonGroupProps {
     href: string;
