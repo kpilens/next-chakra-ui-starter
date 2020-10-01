@@ -83,7 +83,6 @@ export default function View(): JSX.Element {
                         href="/setup/case"
                         mt="4"
                         withIcon
-                        analyticName="Click Setup Use Case"
                         buttonName="Continue to Setup"
                     />
                 </MainBox>

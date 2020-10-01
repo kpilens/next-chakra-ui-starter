@@ -96,7 +96,6 @@ export default function View(): JSX.Element {
                         href="/"
                         mt="4"
                         withIcon
-                        analyticName="Click Invite Team"
                         buttonName="Setup your Workspace"
                     />
                 </MainBox>
